@@ -20,12 +20,12 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/s890214/immortalwrt-mt798x
-  REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  REPO_URL: https://github.com/s890214/immortalwrtARM
+  REPO_BRANCH: mt7981
+  FEEDS_CONF: MT798X-1806/feeds.conf.default
+  CONFIG_FILE: MT798X-1806/.config
+  DIY_P1_SH: MT798X-1806/diy-part1.sh
+  DIY_P2_SH: MT798X-1806/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
