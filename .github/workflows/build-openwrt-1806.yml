@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/s890214/immortalwrtARM
+  REPO_URL: https://github.com/s890214/immortalwrtARM/tree/mt7981
   REPO_BRANCH: mt7981
   FEEDS_CONF: MT798X-1806/feeds.conf.default
   CONFIG_FILE: MT798X-1806/.config
