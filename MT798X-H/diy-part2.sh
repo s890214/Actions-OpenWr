@@ -14,4 +14,4 @@
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 #git clone https://github.com/kiddin9/openwrt-packages.git package/kiddin9
 rm -rf feeds/packages/net/miniupnpd && svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/miniupnpd feeds/packages/net/miniupnpd
-#git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git feeds/luci
