@@ -4,3 +4,4 @@ src-git-full routing https://github.com/openwrt/routing.git;openwrt-21.02
 src-git-full telephony https://github.com/openwrt/telephony.git;openwrt-21.02
 src-git-full wrtbwmon https://github.com/brvphoenix/wrtbwmon.git;master
 src-git-full appwrtbwmon https://github.com/brvphoenix/luci-app-wrtbwmon.git;master
+src-git-full lucky https://github.com/gdy666/luci-app-lucky.git;main
