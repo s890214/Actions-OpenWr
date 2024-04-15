@@ -15,3 +15,4 @@
 # git clone https://github.com/kiddin9/openwrt-packages.git package/kiddin9
 # rm -rf feeds/packages/net/miniupnpd && svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/miniupnpd feeds/packages/net/miniupnpd
 # git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
+git clone https://github.com/sirpdboy/luci-app-lucky.git package/lucky
