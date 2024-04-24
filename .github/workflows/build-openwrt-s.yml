@@ -151,15 +151,6 @@ jobs:
         name: OpenWrt-Mini${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: 创建发布标签
-      id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      run: |
-        echo "release_tag=${{ env.TAG_TIME }}" >> $GITHUB_OUTPUT
-        touch release.txt
-        echo "OpenWrt-Mini（支持ipv6）" >> release.txt
-        echo "status=success" >> $GITHUB_OUTPUT
-
     - name: 清理编译流程
       uses: Mattraks/delete-workflow-runs@main
       with:
