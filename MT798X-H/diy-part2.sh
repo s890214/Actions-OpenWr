@@ -19,6 +19,8 @@
 mkdir -p files/tmp
 git clone https://github.com/s890214/openwrt-packages files/tmp/
 
+# 确保文件夹 files 和 etc 目录存在
+mkdir -p files/etc
 echo "opkg install /tmp/lucky_2.11.2_Openwrt_arm64.ipk" >> files/etc/rc.local
 echo "opkg install /tmp/luci-app-lucky_2.1.1-1_all.ipk" >> files/etc/rc.local
 echo "opkg install /tmp/luci-i18n-lucky-zh-cn_2.1.1-1_all.ipk" >> files/etc/rc.local
