@@ -15,24 +15,3 @@
 # git clone https://github.com/kiddin9/openwrt-packages.git package/kiddin9
 # rm -rf feeds/packages/net/miniupnpd && svn co https://github.com/immortalwrt/packages/tree/15a48bbdb265f0df4f2e517b3b53c1cd00878329/net/miniupnpd feeds/packages/net/miniupnpd
 # git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
-
-mkdir -p files/tmp
-git clone https://github.com/s890214/openwrt-packages files/tmp/
-
-# 确保文件夹 files 和 etc 目录存在
-mkdir -p files/etc
-
-# 添加安装 lucky 的条件判断
-echo 'if ! opkg list-installed | grep -q "lucky"; then' >> files/etc/rc.local
-echo "    opkg install /tmp/lucky_2.11.2_Openwrt_arm64.ipk" >> files/etc/rc.local
-echo 'fi' >> files/etc/rc.local
-
-# 添加安装 luci-app-lucky 的条件判断
-echo 'if ! opkg list-installed | grep -q "luci-app-lucky"; then' >> files/etc/rc.local
-echo "    opkg install /tmp/luci-app-lucky_2.1.1-1_all.ipk" >> files/etc/rc.local
-echo 'fi' >> files/etc/rc.local
-
-# 添加安装 luci-i18n-lucky-zh-cn 的条件判断
-echo 'if ! opkg list-installed | grep -q "luci-i18n-lucky-zh-cn"; then' >> files/etc/rc.local
-echo "    opkg install /tmp/luci-i18n-lucky-zh-cn_2.1.1-1_all.ipk" >> files/etc/rc.local
-echo 'fi' >> files/etc/rc.local
