@@ -25,14 +25,17 @@ rm -rf feeds/luci/applications/luci-app-lucky
 git clone https://github.com/gdy666/luci-app-lucky.git -b main package/diy/lucky
 sleep 1
 
-#-- use custom binary ver 2.13.7
-cp -f ${GITHUB_WORKSPACE}/_modFiles/2lucky/luckyMakefile package/diy/lucky/lucky/Makefile
+#-- use custom binary ver
+# cp -f ${GITHUB_WORKSPACE}/_modFiles/2lucky/luckyMakefile package/diy/lucky/lucky/Makefile
+curl -o package/diy/lucky/lucky/Makefile https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/luckyMakefile
 if [ $? -eq 0 ]; then
     echo "luckyMakefile copied"
 else
     echo "luckyMakefile copy failed"
 fi
-cp -f ${GITHUB_WORKSPACE}/_modFiles/2lucky/lucky package/diy/lucky/lucky/files/lucky
+
+# cp -f ${GITHUB_WORKSPACE}/_modFiles/2lucky/lucky package/diy/lucky/lucky/files/lucky
+curl -o package/diy/lucky/lucky/files/lucky https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/lucky
 if [ $? -eq 0 ]; then
     echo "lucky bin copied"
 else
