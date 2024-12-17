@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt
+name: Build OpenWrt-18.06
 
 on:
   repository_dispatch:
@@ -93,7 +93,7 @@ jobs:
       id: package
       run: |
         cd openwrt
-        make defconfig
+        make oldconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
