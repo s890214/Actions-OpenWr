@@ -16,6 +16,8 @@
 # rm -rf feeds/packages/net/miniupnpd && svn co https://github.com/immortalwrt/packages/tree/15a48bbdb265f0df4f2e517b3b53c1cd00878329/net/miniupnpd feeds/packages/net/miniupnpd
 # git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 
+# ## -------------- passwall ---------------------------
+git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 
 # ## -------------- lucky ---------------------------
 rm -rf feeds/packages/net/lucky
