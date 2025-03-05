@@ -18,6 +18,7 @@
 
 # ## -------------- passwall ---------------------------
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+sleep 1
 
 # ## -------------- lucky ---------------------------
 rm -rf feeds/packages/net/lucky
