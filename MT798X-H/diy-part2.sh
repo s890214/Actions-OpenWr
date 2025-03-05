@@ -17,7 +17,7 @@
 # git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 
 # ## -------------- passwall ---------------------------
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+# git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 
 # ## -------------- lucky ---------------------------
 rm -rf feeds/packages/net/lucky
