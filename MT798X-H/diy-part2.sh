@@ -37,7 +37,8 @@ else
 fi
 
 # cp -f ${GITHUB_WORKSPACE}/_modFiles/2lucky/lucky package/diy/lucky/lucky/files/lucky
-curl -o package/diy/lucky/lucky/files/lucky https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/lucky
+# curl -o package/diy/lucky/lucky/files/lucky https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/lucky
+curl -o package/diy/lucky/lucky/files/lucky https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/luckyMakefile250220andnewer
 if [ $? -eq 0 ]; then
     echo "lucky bin copied"
 else
