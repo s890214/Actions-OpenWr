@@ -17,6 +17,7 @@
 # git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 
 # ## -------------- passwall ---------------------------
+rm -rf feeds/luci/applications/luci-app-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 sleep 1
 
