@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build OpenWrt-23.5
+name: Build OpenWrt-24.10
 
 on:
   repository_dispatch:
@@ -20,12 +20,12 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-23.05
-  REPO_BRANCH: openwrt-23.05
-  FEEDS_CONF: MT798X-23.05/feeds.conf.default
-  CONFIG_FILE: MT798X-23.05/.config
-  DIY_P1_SH: MT798X-23.05/diy-part1.sh
-  DIY_P2_SH: MT798X-23.05/diy-part2.sh
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
+  REPO_BRANCH: 2410
+  FEEDS_CONF: MT798X-24.10/feeds.conf.default
+  CONFIG_FILE: MT798X-24.10/.config
+  DIY_P1_SH: MT798X-24.10/diy-part1.sh
+  DIY_P2_SH: MT798X-24.10/diy-part2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
