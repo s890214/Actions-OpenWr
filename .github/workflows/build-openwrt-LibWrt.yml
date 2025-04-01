@@ -22,10 +22,10 @@ on:
 env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
   REPO_BRANCH: kernel-6.12
-  FEEDS_CONF: AX6600-LibWrt/feeds.conf.default
-  CONFIG_FILE: AX6600-LibWrt/.config
-  DIY_P1_SH: AX6600-LibWrt/diy-part1.sh
-  DIY_P2_SH: AX6600-LibWrt/diy-part2.sh
+  FEEDS_CONF: AX6600-LiBwrt/feeds.conf.default
+  CONFIG_FILE: AX6600-LiBwrt/.config
+  DIY_P1_SH: AX6600-LiBwrt/diy-part1.sh
+  DIY_P2_SH: AX6600-LiBwrt/diy-part2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
