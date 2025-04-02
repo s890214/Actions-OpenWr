@@ -6,4 +6,4 @@ src-git video https://github.com/openwrt/video.git
 src-git nss_packages https://github.com/LiBwrt/nss-packages.git
 src-git wrtbwmon https://github.com/brvphoenix/luci-app-wrtbwmon.git
 src-git lucky https://github.com/gdy666/luci-app-lucky.git
-src-git athena-led https://github.com/NONGFAH/luci-app-athena-led.git
+src-git athena_led https://github.com/NONGFAH/luci-app-athena-led.git
