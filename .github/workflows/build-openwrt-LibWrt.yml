@@ -103,7 +103,11 @@ jobs:
         run: |
           cd openwrt
           echo -e "$(nproc) thread compile"
+          # Output progress to avoid job timeout
+          while sleep 300; do echo "[Heartbeat] Compile still running at $(date)"; done & 
+          # Safely compile with limited threads
           make -j$(nproc) || make -j1 || make -j1 V=s
+          kill %1
           echo "::set-output name=status::success"
 
       - name: Check space usage
