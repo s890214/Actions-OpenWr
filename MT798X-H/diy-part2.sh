@@ -21,8 +21,8 @@ rm -rf feeds/packages/net/lucky
 rm -rf feeds/luci/applications/luci-app-lucky
 
 # #/etc/config/lucky.daji/lucky.conf
-git clone https://github.com/gdy666/luci-app-lucky.git -b main package/diy/lucky
-# git clone -b v2.15.7 --single-branch https://github.com/gdy666/luci-app-lucky.git package/diy/lucky
+# git clone https://github.com/gdy666/luci-app-lucky.git -b main package/diy/lucky
+git clone -b v2.15.7 --single-branch https://github.com/gdy666/luci-app-lucky.git package/diy/lucky
 sleep 1
 
 #-- use custom binary ver
