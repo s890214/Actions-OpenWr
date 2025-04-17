@@ -37,16 +37,16 @@ jobs:
   build:
     runs-on: ubuntu-22.04
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@main
-     
+    steps:  
     - name: Maximize build space (释放并整合磁盘空间)
       uses: easimon/maximize-build-space@master
       with:
         swap-size-mb: 1024
         temp-reserve-mb: 100
         root-reserve-mb: 1024
+
+    - name: Checkout
+      uses: actions/checkout@main
 
     - name: Initialization environment
       env:
