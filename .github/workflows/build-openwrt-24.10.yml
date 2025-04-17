@@ -41,13 +41,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
+      - name: Maximize build space (释放并整合磁盘空间)
+        uses: easimon/maximize-build-space@master
+        with:
+          swap-size-mb: 1024
+          temp-reserve-mb: 100
+          root-reserve-mb: 1024
+
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
           sudo -E apt-get -y update
-          sudo -E apt-get -y install $(curl -fsSL git.io/depends-ubuntu-2004)
+          sudo -E apt-get -y install $(curl -fsSL is.gd/depends_ubuntu_2204)
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get -y clean
           sudo timedatectl set-timezone "$TZ"
