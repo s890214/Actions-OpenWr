@@ -45,16 +45,16 @@ jobs:
     - name: Maximize build space
       uses: AdityaGarg8/remove-unwanted-software@v5
       with:
-        remove-dotnet: "true"
+        remove-dotnet: "false"
         remove-android: "true"
-        remove-haskell: "true"
-        remove-codeql: "true"
+        remove-haskell: "false"
+        remove-codeql: "false"
         remove-docker-images: "true"
-        remove-large-packages: "true"
-        remove-cached-tools: "true"
-        remove-swapfile: "true"
+        remove-large-packages: "false"
+        remove-cached-tools: "false"
+        remove-swapfile: "false"
 
-    - name: 2222
+    - name: df2222
       run: |
         df -hT $PWD  
 
