@@ -38,32 +38,20 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: df1111
-      run: |
-        df -hT $PWD    
-
     - name: Maximize build space
       uses: AdityaGarg8/remove-unwanted-software@v5
       with:
-        remove-dotnet: "false"
+        remove-dotnet: "true"
         remove-android: "true"
         remove-haskell: "false"
-        remove-codeql: "false"
+        remove-codeql: "true"
         remove-docker-images: "true"
         remove-large-packages: "false"
         remove-cached-tools: "false"
-        remove-swapfile: "false"
-
-    - name: df2222
-      run: |
-        df -hT $PWD  
+        remove-swapfile: "true"
 
     - name: Checkout
       uses: actions/checkout@main
-
-    - name: df3333
-      run: |
-        df -hT $PWD  
 
     - name: Initialization environment
       env:
