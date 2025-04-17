@@ -46,8 +46,8 @@ jobs:
           remove-haskell: "true"
           remove-codeql: "true"
           remove-docker-images: "true"
-          remove-large-packages: "true"
-          remove-cached-tools: "true"
+          remove-large-packages: "false"
+          remove-cached-tools: "false"
           remove-swapfile: "true"
 
       - name: Checkout
