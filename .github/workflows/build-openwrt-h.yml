@@ -37,16 +37,33 @@ jobs:
   build:
     runs-on: ubuntu-22.04
 
-    steps:  
-    - name: Maximize build space (释放并整合磁盘空间)
-      uses: easimon/maximize-build-space@master
+    steps:
+    - name: df1111
+      run: |
+        df -hT $PWD    
+
+    - name: Maximize build space
+      uses: AdityaGarg8/remove-unwanted-software@v5
       with:
-        swap-size-mb: 1024
-        temp-reserve-mb: 100
-        root-reserve-mb: 1024
+        remove-dotnet: "true"
+        remove-android: "true"
+        remove-haskell: "true"
+        remove-codeql: "true"
+        remove-docker-images: "true"
+        remove-large-packages: "true"
+        remove-cached-tools: "true"
+        remove-swapfile: "true"
+
+    - name: 2222
+      run: |
+        df -hT $PWD  
 
     - name: Checkout
       uses: actions/checkout@main
+
+    - name: df3333
+      run: |
+        df -hT $PWD  
 
     - name: Initialization environment
       env:
