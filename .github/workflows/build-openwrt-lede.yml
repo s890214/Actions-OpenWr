@@ -38,32 +38,28 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        
       - name: Maximize build space (释放并整合磁盘空间)
         uses: easimon/maximize-build-space@master
         with:
           swap-size-mb: 1024
           temp-reserve-mb: 100
-          root-reserve-mb: 1024  
-      
-      - name: Initialization Environment (初始化环境，更彻底的版本)
+          root-reserve-mb: 1024
+
+      - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          docker rmi $(docker images -q)
-          sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d \
-            /usr/local/lib/android $AGENT_TOOLSDIRECTORY
-          sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* \
-            dotnet* powershell openjdk* mongodb* moby* || true
+          sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
           sudo -E apt-get -y update
           sudo -E apt-get -y install $(curl -fsSL is.gd/depends_ubuntu_2204)
-          sudo -E systemctl daemon-reload
           sudo -E apt-get -y autoremove --purge
           sudo -E apt-get -y clean
           sudo timedatectl set-timezone "$TZ"
-          df -hT # 最后查看磁盘空间效果
-      
-      - name: Checkout (拉取源码)
-        uses: actions/checkout@main
+          sudo mkdir -p /workdir
+          sudo chown $USER:$GROUPS /workdir
 
       - name: Clone source code
         working-directory: /workdir
