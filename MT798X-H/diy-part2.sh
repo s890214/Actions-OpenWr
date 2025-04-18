@@ -21,25 +21,23 @@ rm -rf feeds/packages/net/lucky
 rm -rf feeds/luci/applications/luci-app-lucky
 
 # #/etc/config/lucky.daji/lucky.conf
-git clone https://github.com/gdy666/luci-app-lucky.git -b main package/diy/lucky
+# git clone https://github.com/gdy666/luci-app-lucky.git -b main package/diy/lucky
 # git clone -b v2.15.7 --single-branch https://github.com/gdy666/luci-app-lucky.git package/diy/lucky
+
+# 处理2.15.7+版本 后台打不开问题
+# 1. 先clone最新版main分支 (仅main分支)到指定目录
+git clone -b main --single-branch https://github.com/gdy666/luci-app-lucky.git package/diy/lucky
+
+# 2. 删除目录中你想以旧版本覆盖的部分
+rm -rf package/diy/lucky/luci-app-lucky
+
+# 3. 单独clone v2.15.7版本 (仅该分支)到临时位置
+git clone -b v2.15.7 --single-branch https://github.com/gdy666/luci-app-lucky.git /tmp/tmp_lucky
+
+# 4. 移动所需文件/文件夹到目标目录
+mv /tmp/tmp_lucky/luci-app-lucky package/diy/lucky/
+
+# 5. 删除临时文件夹
+rm -rf /tmp/tmp_lucky
+
 sleep 1
-
-#-- use custom binary ver
-# cp -f ${GITHUB_WORKSPACE}/_modFiles/2lucky/luckyMakefile package/diy/lucky/lucky/Makefile
-# curl -o package/diy/lucky/lucky/Makefile https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/luckyMakefile
-# if [ $? -eq 0 ]; then
-#     echo "luckyMakefile copied"
-# else
-#     echo "luckyMakefile copy failed"
-# fi
-
-# cp -f ${GITHUB_WORKSPACE}/_modFiles/2lucky/lucky package/diy/lucky/lucky/files/lucky
-# curl -o package/diy/lucky/lucky/files/lucky https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/lucky
-# curl -o package/diy/lucky/lucky/files/lucky https://raw.githubusercontent.com/budaig/Actions-OpenWrt/main/_modFiles/2lucky/luckyMakefile250220andnewer
-# if [ $? -eq 0 ]; then
-#     echo "lucky bin copied"
-# else
-#     echo "lucky bin copy failed"
-# fi
-# ## ---------------------------------------------------------
