@@ -41,9 +41,3 @@ mv /tmp/tmp_lucky/luci-app-lucky package/diy/lucky/
 rm -rf /tmp/tmp_lucky
 
 sleep 1
-
-# ## -------------- openclash ---------------------------
-\rm -rf ./feeds/luci/applications/luci-app-openclash
-# git clone -b main --single-branch https://github.com/vernesong/OpenClash package/diy/OpenClash
-
-sleep 1
