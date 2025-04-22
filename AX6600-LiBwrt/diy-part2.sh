@@ -20,3 +20,9 @@
 # git clone https://github.com/gdy666/luci-app-lucky.git package/diy/lucky
 # git clone https://github.com/brvphoenix/luci-app-wrtbwmon.git package/wrtbwmon
 # git clone https://github.com/vernesong/OpenClash luci-app-openclash
+
+
+mkdir -p files/etc/openclash/core
+CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
+wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
+chmod +x files/etc/openclash/core/clash*
